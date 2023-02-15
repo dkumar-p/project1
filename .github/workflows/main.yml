@@ -14,12 +14,14 @@ jobs:
       - name: greet user
         run: echo "Welcome to the New World"
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: greet user
         run: echo "Welcome to the New World"
   Deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
