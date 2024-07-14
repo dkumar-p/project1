@@ -4,6 +4,8 @@ phases:
     runtime-versions:
       python: 3.11
     commands:
+      - yum install epel-release
+      - yum install python-pip
       - pip install -r requirements.txt
   build:
     commands:
