@@ -11,5 +11,5 @@ phases:
       - python sources/calc.py
 artifacts:
   files: 
-    - "**/*"
-  base-directory: 'dist/sources/add2vals'
+    - 'calc.py'
+  base-directory: sources/*
