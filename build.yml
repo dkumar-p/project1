@@ -11,5 +11,4 @@ phases:
       - python sources/calc.py
 artifacts:
   files: 
-    - 'calc.py'
-  base-directory: sources/*
+    - '**/*'
