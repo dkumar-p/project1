@@ -8,7 +8,7 @@ phases:
       - pip install --no-cache-dir -r requirements.txt
   build:
     commands:
-      - python calc.py
+      - python sources/calc.py
 artifacts:
   files: 
     - "**/*"
