@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: 'sources/**'
+  - source: 'sources/calc.py'
     destination: /var/www/python-project
 permissions:
   - object: /var/www/python-project
