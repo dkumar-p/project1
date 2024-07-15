@@ -1,16 +1,12 @@
 version: 0.2
 phases:
-  install:
-    runtime-versions:
-      python: 3.11
+  pre_build:
     commands:
-      - yum install python-pip -y
-      - pip install --no-cache-dir -r requirements.txt
+      - echo ${DOCKERHUB_TOKEN} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin
   build:
     commands:
-      - python sources/**
-artifacts:
-  files: 
-    - '**/*'
-    - appspec.yml
-    - 'deploy-scripts/**/*'
+      - docker build -t my-app-test:latest .
+  post_build:
+    commands:
+      - docker tag my-angular-app:latest ${DOCKERHUB_USER}/my-angular-app:latest
+      - docker push ${DOCKERHUB_USER}/my-angular-app:latest
